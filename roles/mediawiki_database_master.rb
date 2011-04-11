@@ -1,5 +1,5 @@
-name "mediawiki"
-description "mediawiki front end application server."
+name "mediawiki_database_master"
+description "database master for the mediawiki application."
 run_list(
   "recipe[mysql::client]",
   "recipe[application]",
