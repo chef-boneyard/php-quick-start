@@ -14,7 +14,7 @@
   ],
   "repository": "git://github.com/mediawiki/mediawiki-trunk-phase3.git",
   "revision": {
-    "production": "558d416a6e1de9fb9b7a4a24a1792af33072e676"
+    "production": "c7b5a88a6a25c55a2b9c16becde3ee2a6fdf7cdf"
   },
   "force": {
     "production": "false"
