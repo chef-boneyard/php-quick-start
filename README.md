@@ -4,6 +4,10 @@ This guide describes how to build a PHP application stack using Chef cookbooks a
 
 ***Note:** At this time, the steps described above have only been tested on the identified platform(s).  Opscode has not researched and does not support alternative steps that may lead to successful completion on other platforms.  Platform(s) supported by this guide may change over time, so please do check back for updates.  If you'd like to undertake this guide on an alternate platform, you may desire to turn to open source community resources for support assistance.*
 
+You can watch a short screencast of this guide [here](http://blip.tv/opscode/build-a-mediawiki-lamp-stack-with-chef-5211811):
+
+<embed src="http://blip.tv/play/hMAggr6OBwA" type="application/x-shockwave-flash" width="600" height="480" wmode="transparent" allowscriptaccess="always" allowfullscreen="true" ></embed>
+
 
 At the end of this guide, you'll have four total Ubuntu 10.04 systems running in Amazon EC2.
 
