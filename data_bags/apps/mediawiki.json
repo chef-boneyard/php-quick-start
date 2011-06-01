@@ -14,13 +14,13 @@
   ],
   "repository": "git://github.com/mediawiki/mediawiki-trunk-phase3.git",
   "revision": {
-    "production": "master"
+    "_default": "master"
   },
   "force": {
-    "production": false
+    "_default": false
   },
   "databases": {
-    "production": {
+    "_default": {
       "reconnect": "true",
       "encoding": "utf8",
       "username": "db_user",
@@ -30,13 +30,13 @@
     }
   },
   "mysql_root_password": {
-    "production": "mysql_root"
+    "_default": "mysql_root"
   },
   "mysql_debian_password": {
-    "production": "mysql_debian"
+    "_default": "mysql_debian"
   },
   "mysql_repl_password": {
-    "production": "mysql_repl"
+    "_default": "mysql_repl"
   },
   "deploy_to": "/srv/mediawiki",
   "owner": "nobody",
