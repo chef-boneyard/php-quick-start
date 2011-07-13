@@ -37,8 +37,10 @@ cookbook_file "#{Chef::Config[:file_cache_path]}/schema.sql" do
   group "root"
 end
 
+db_host = (dbm.attribute?('cloud') ? dbm['cloud']['local_ipv4'] : dbm['ipaddress'])
+
 execute "db_bootstrap" do
-  command "/usr/bin/mysql -u #{db['username']} -p#{db['password']} -h #{dbm['fqdn']} #{db['database']} < #{Chef::Config[:file_cache_path]}/schema.sql"
+  command "/usr/bin/mysql -u #{db['username']} -p#{db['password']} -h #{db_host} #{db['database']} < #{Chef::Config[:file_cache_path]}/schema.sql"
   action :run
   notifies :create, "ruby_block[remove_mediawiki_bootstrap]", :immediately
 end
