@@ -1,4 +1,4 @@
-This guide describes how to build a PHP application stack using Chef cookbooks available from the [Cookbooks Community Site](http://cookbooks.opscode.com) and the Opscode Platform. It assumes you followed the [Getting Started Guide](http://help.opscode.com/faqs/start/how-to-get-started) and have Chef installed. 
+This guide describes how to build a PHP application stack using Chef cookbooks available from the [Cookbooks Community Site](http://cookbooks.opscode.com) and Opscode's Hosted Chef. It assumes you followed the [Getting Started Guide](http://help.opscode.com/faqs/start/how-to-get-started) and have Chef installed. 
 
 *This guide uses Ubuntu 10.04 on Amazon AWS EC2 with Chef 0.10.0.*
 
@@ -21,7 +21,6 @@ We're going to reuse a number of cookbooks from the [Cookbooks Community Site](h
 
 The **application** cookbook will perform the following steps:
 
-* create an application specific virtualenv
 * install required packages and pears for the project
 * set up the deployment scaffolding
 * creates LocalSettings.php file with the database connection information if required
@@ -120,7 +119,7 @@ A single new non-community cookbook was also created for this quick-start. This 
 
     mediawiki
 
-Upload all the cookbooks to the Opscode Platform.
+Upload all the cookbooks to the Hosted Chef server.
 
     knife cookbook upload -a
 
@@ -134,7 +133,7 @@ All the required roles have been created in the php-quick-start repository. They
     mediawiki.rb
     mediawiki_load_balancer.rb
 
-Upload all the roles to the Opscode Platform.
+Upload all the roles to the Hosted Chef server.
 
     rake roles
 
@@ -143,7 +142,7 @@ Data Bag Item
 
 The php-quick-start repository contains a data bag item that has all the information required to deploy and configure the MediaWiki application from source using the recipes in the **application** and **database** cookbooks.
 
-The data bag name is **apps** and the item name is **mediawiki**. Upload this to the Opscode Platform.
+The data bag name is **apps** and the item name is **mediawiki**. Upload this to the Hosted Chef server.
 
     knife data bag create apps
     knife data bag from file apps mediawiki.json
@@ -158,7 +157,7 @@ In either case, we're going to use m1.small instances with the 32 bit Ubuntu 10.
 This command will:
 
 * Launch a server on EC2.
-* Connect it to the Opscode Platform.
+* Connect it to the Hosted Chef server.
 * Configure the system with Chef.
 
 See the appropriate section below for instruction on launching a single instance, or launching the multi-system infrastructure.
